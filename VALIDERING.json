@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "date": "2026-09-22",
+  "checks": [
+    "No customer domains or tracking/account/container IDs",
+    "References and generic template ID match",
+    "Vendor tags paused and IDs empty",
+    "All category triggers require cc_v3_ready and true",
+    "GA4 and Clarity require analytics_storage",
+    "Native engine tested with all eight category combinations",
+    "Native engine and shared runtime unchanged"
+  ],
+  "gtm_import_verified": false,
+  "real_browser_network_verified": false
+}

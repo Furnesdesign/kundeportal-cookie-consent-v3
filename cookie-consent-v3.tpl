@@ -447,4 +447,4 @@ scenarios: []
 
 ___NOTES___
 
-Cookie Consent v3.0.0-rc.1. Validate import and preview before publication.
+Cookie Consent v3.0.0. Validate import and preview before publication.

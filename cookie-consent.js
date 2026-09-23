@@ -1,4 +1,4 @@
-/* Furnes design Cookie Consent v3.0.0-rc.1
+/* Furnes design Cookie Consent v3.0.0
  * Requires the matching v3 GTM configuration. No vendor requests before consent.
  * Existing Webflow cc / cc-checkbox attributes are preserved.
  */
@@ -6,7 +6,7 @@
   'use strict';
   if (window.CookieConsentV3) return;
 
-  var VERSION = '3.0.0-rc.1';
+  var VERSION = '3.0.0';
   var config = window.CookieConsentConfig || {};
   var key = config.storageKey || 'fd_cookie_consent_v3';
   var policy = String(config.policyVersion || '3');

@@ -1,15 +1,53 @@
 {
-  "status": "passed",
-  "date": "2026-09-22",
-  "checks": [
-    "No customer domains or tracking/account/container IDs",
-    "References and generic template ID match",
-    "Vendor tags paused and IDs empty",
-    "All category triggers require cc_v3_ready and true",
-    "GA4 and Clarity require analytics_storage",
-    "Native engine tested with all eight category combinations",
-    "Native engine and shared runtime unchanged"
-  ],
-  "gtm_import_verified": false,
-  "real_browser_network_verified": false
+  "status": "stable_release_prepared",
+  "version": "3.0.0",
+  "date": "2026-09-23",
+  "release_scope": "Version promotion of the tested generic RC package. Consent behavior and GTM settings are unchanged.",
+  "release_checks": {
+    "status": "passed",
+    "checks": [
+      "Deployed jsDelivr RC runtime matches the local RC runtime byte for byte",
+      "Stable runtime differs only in its header and exposed version string",
+      "GTM export differs only in version notes, description and export time",
+      "Standalone and embedded GTM templates match exactly",
+      "Generic GA4 and Clarity tags remain paused with nonempty placeholder IDs",
+      "Webflow head configuration is unchanged; footer points to v3.0.0",
+      "Seven original generic filenames retained in ZIP root"
+    ],
+    "rc_runtime_sha256": "e26da0fb541b2ff0a9ec16f40ed456b9f83b5838341510490dacace5fff0b2dc",
+    "stable_runtime_sha256": "bbb50711b672f2dabcd08c9d289d99042f07e3700a31cb0f920e0e0d323f9755"
+  },
+  "earlier_automated_validation": {
+    "tested_version": "3.0.0-rc.1",
+    "runtime_tests_passed": 38,
+    "template_category_combinations_checked": 8,
+    "note": "Recorded from earlier RC validation. This release only changes version metadata and documentation; the full behavioral suite was not rerun."
+  },
+  "manual_evidence": {
+    "tested_version": "3.0.0-rc.1",
+    "source": "User-provided screenshots and test reports in the conversation",
+    "scope": "One Webflow test site with its configured GTM container, GA4 and Clarity",
+    "gtm_import_confirmed": true,
+    "browsers": [
+      "Firefox",
+      "Chrome"
+    ],
+    "observed": [
+      "GTM Preview detects the configured container and vendor tags after consent",
+      "Successful GA4 and Clarity collection requests are visible after consent",
+      "GA4 first-party cookies are visible after consent",
+      "User reports no vendor requests on reject, and immediate tracking activation on allow without manual reload in Chrome"
+    ],
+    "additional_test_report": "User reports the remaining proposed tests appear to work. Individual cases were not independently observed by the assistant.",
+    "limitations": [
+      "No complete HAR capture was archived",
+      "Production domains, additional browsers and additional vendor tags are outside this evidence",
+      "Stopping and reloading already loaded vendor scripts does not prove that no final in-flight or unload request can occur during withdrawal"
+    ]
+  },
+  "publication": {
+    "github_v3_0_0_published_by_assistant": false,
+    "stable_cdn_url_verified": false,
+    "next_step": "Commit these files, create the v3.0.0 tag and release, verify its CDN URL, then update Webflow footers."
+  }
 }
